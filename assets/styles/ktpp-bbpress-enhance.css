@@ -1,0 +1,95 @@
+@charset 'utf-8';
+
+.ktpp-bbpress-enhance-accordion {
+  margin-top: 0.88462rem;
+  display: block !important;
+  width: 100%;
+}
+
+.ktpp-bbpress-enhance-accordion > .ktpp-bbpress-enhance-accordion__item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ktpp-bbpress-enhance-accordion__item {
+  position: relative;
+}
+
+.ktpp-bbpress-enhance-accordion__item:not(:first-child) {
+  margin-top: 0.88462rem;
+  margin-top: calc(var(--_space, 1.76923rem) * 0.5 * var(--_margin-scale, 1));
+}
+
+.ktpp-bbpress-enhance-accordion__item:not(:last-child)
+  .ktpp-bbpress-enhance-accordion__item__body {
+  padding-bottom: 1.76923rem;
+  padding-bottom: calc(var(--_space, 1.76923rem) * 1);
+}
+
+.ktpp-bbpress-enhance-accordion__item__title {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  background-color: var(--_lighter-color-gray, #eee);
+  color: #333;
+  color: var(--_color-text, #333);
+  padding: 0.44231rem 0.88462rem;
+  padding: calc(var(--_space, 1.76923rem) * 0.25)
+    calc(var(--_space, 1.76923rem) * 0.5);
+}
+
+.ktpp-bbpress-enhance-accordion__item__title__label {
+  flex: 1 1 auto;
+}
+
+.ktpp-bbpress-enhance-accordion__item__title__icon {
+  transition: transform 0.2s ease-out;
+  flex: 0 0 auto;
+}
+
+.ktpp-bbpress-enhance-accordion__item__control {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  display: block !important;
+  cursor: pointer !important;
+  height: 100% !important;
+  width: 100% !important;
+  opacity: 0 !important;
+  outline: none !important;
+}
+
+.ktpp-bbpress-enhance-accordion__item__body {
+  position: relative;
+  z-index: 2;
+  display: none;
+  padding-top: 0.88462rem;
+  padding-top: calc(var(--_space, 1.76923rem) * 0.5);
+  padding-right: 0.44231rem;
+  padding-right: calc(var(--_space, 1.76923rem) * 0.25);
+  padding-bottom: 0;
+  padding-left: 0.44231rem;
+  padding-left: calc(var(--_space, 1.76923rem) * 0.25);
+}
+
+.ktpp-bbpress-enhance-accordion
+  .ktpp-bbpress-enhance-accordion__item__control:checked
+  + .ktpp-bbpress-enhance-accordion__item__body,
+.ktpp-bbpress-enhance-accordion
+  .ktpp-bbpress-enhance-accordion__item__control:checked
+  + .ktpp-bbpress-enhance-accordion__item__title
+  + .ktpp-bbpress-enhance-accordion__item__body {
+  display: block;
+}
+
+.ktpp-bbpress-enhance-accordion
+  .ktpp-bbpress-enhance-accordion__item__control:checked
+  + .ktpp-bbpress-enhance-accordion__item__title
+  > .ktpp-bbpress-enhance-accordion__item__title__icon {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "kotonoha-tena/bbpress-enhance",
+  "description": "Kotonoha Tena bbPress Enhance",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Kotonoha Tena",
+      "email": "kotonoha.tena@gmail.com",
+      "homepage": "https://github.com/kmix-39"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "inc2734/wp-plugin-view-controller": "^1.1.1",
+    "inc2734/wp-github-plugin-updater": "^3.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "KTPP\\bbPressEnhance\\": ""
+    }
+  },
+  "config": {
+    "autoloader-suffix": "KTPP_bbPressEnhance"
+  }
+}
