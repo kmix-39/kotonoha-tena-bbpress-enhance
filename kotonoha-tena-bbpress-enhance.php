@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Kotonoha Tena bbPress Enhance
- * Plugin URI: https://github.com/kmix-39
+ * Plugin URI: https://reverse-gorilla.netlify.app
  * Description: Enhance the functionality of bbPress
  * Version: 0.1.0
  * Requires at least: 5.6

@@ -7,13 +7,12 @@
     {
       "name": "Kotonoha Tena",
       "email": "kotonoha.tena@gmail.com",
-      "homepage": "https://github.com/kmix-39"
+      "homepage": "https://reverse-gorilla.netlify.app"
     }
   ],
   "require": {
     "php": ">=7.0",
-    "inc2734/wp-plugin-view-controller": "^1.1.1",
-    "inc2734/wp-github-plugin-updater": "^3.1.1"
+    "inc2734/wp-plugin-view-controller": "^1.1.1"
   },
   "autoload": {
     "psr-4": {
