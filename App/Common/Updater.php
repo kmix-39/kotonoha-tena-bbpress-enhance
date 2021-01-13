@@ -11,7 +11,7 @@ class Updater {
 
 	static function _activate_autoupdate() {
 		new WP_GitHub_Plugin_Updater\Bootstrap(
-			KTPP_BBPRESS_ENHANCE_FILE,
+			plugin_basename( KTPP_BBPRESS_ENHANCE_FILE ),
 			'kmix-39',
 			'kotonoha-tena-bbpress-enhance',
 			[]
