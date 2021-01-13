@@ -40,21 +40,7 @@ class Bootstrap {
 	}
 
 	static function _enqueue_scripts_ktpp_bbpress_enhance() {
-		wp_enqueue_script(
-			'ktpp-bbpress-enhance',
-			KTPP_BBPRESS_ENHANCE_URL . '/assets/scripts/ktpp-bbpress-enhance.js',
-			[ 'snow-monkey-bbpress-support' ],
-			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/scripts/ktpp-bbpress-enhance.js' ),
-			true
-		);
-		wp_localize_script(
-			'ktpp-bbpress-enhance',
-			'KTPP_BBPRESS_ENHANCE',
-			[
-				'endpoint' => admin_url( 'admin-ajax.php' ),
-				'topicType' => bbp_get_topic_post_type(),
-			]
-		);
+		Helper::enqueue_scripts_ktpp_bbpress_enhance();
 	}
 
 	static function _add_template_stack( $_stack ) {

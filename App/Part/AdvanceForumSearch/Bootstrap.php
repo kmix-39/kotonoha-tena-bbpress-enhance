@@ -9,16 +9,11 @@ class Bootstrap {
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, '_enqueue_scripts_ktpp_bbpress_enhance' ] );
 		add_filter( 'bbp_before_has_search_results_parse_args' , [ __CLASS__, '_bbp_before_has_search_results_parse_args' ] );
 		add_filter( 'bbp_get_template_part', [ __CLASS__, '_bbp_form_search_template' ], 10, 3 );
-		//add_action( 'bbp_template_before_search', [ __CLASS__, '_bbp_template_before_search' ], 10, 0 );
 	}
 
 	static function _enqueue_scripts_ktpp_bbpress_enhance() {
-		wp_enqueue_style(
-			'ktpp-bbpress-enhance',
-			KTPP_BBPRESS_ENHANCE_URL . '/assets/styles/ktpp-bbpress-enhance.css',
-			[ \Framework\Helper::get_main_style_handle() ],
-			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/styles/ktpp-bbpress-enhance.css' )
-		);
+		Helper::enqueue_scripts_ktpp_bbpress_enhance();
+		Helper::enqueue_styles_ktpp_bbpress_enhance();
 	}
 
 	static function _bbp_before_has_search_results_parse_args( $r ) {
@@ -38,13 +33,13 @@ class Bootstrap {
 				);
 			}
 		}
-		if ( isset( $_GET['bbp_type'] ) ) {
+		if ( isset( $_GET['bbp_type'] ) && ! empty( $_GET['bbp_type'] ) ) {
 			$r['post_type'] = $_GET['bbp_type'];
 		}
-		if ( isset( $_GET['bbp_topic_status'] ) ) {
+		if ( isset( $_GET['bbp_topic_status'] ) && ! empty( $_GET['bbp_topic_status'] ) ) {
 			$r['post_status'] = $_GET['bbp_topic_status'];
 		}
-		if ( isset( $_GET['bbp_replyed'] ) ) {
+		if ( isset( $_GET['bbp_replyed'] ) && ! empty( $_GET['bbp_replyed'] ) ) {
 			if ( in_array( $_GET['bbp_replyed'], [ '=', '>' ] ) ) {
 				$r['meta_query'] = array_merge(
 					$r['meta_query'], [
@@ -57,8 +52,6 @@ class Bootstrap {
 				);
 			}
 		}
-
-		
 
 		return $r;
 	}

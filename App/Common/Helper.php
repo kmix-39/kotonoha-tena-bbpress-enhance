@@ -42,9 +42,31 @@ class Helper {
 		return get_posts( $_args );
 	}
 
+	static function enqueue_scripts_ktpp_bbpress_enhance() {
+		wp_enqueue_script(
+			'ktpp-bbpress-enhance',
+			KTPP_BBPRESS_ENHANCE_URL . '/assets/scripts/ktpp-bbpress-enhance.js',
+			[ 'snow-monkey-bbpress-support' ],
+			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/scripts/ktpp-bbpress-enhance.js' ),
+			true
+		);
+		wp_localize_script(
+			'ktpp-bbpress-enhance',
+			'KTPP_BBPRESS_ENHANCE',
+			[
+				'endpoint' => admin_url( 'admin-ajax.php' ),
+				'topicType' => bbp_get_topic_post_type(),
+			]
+		);
+	}
 
-
-
-
+	static function enqueue_styles_ktpp_bbpress_enhance() {
+		wp_enqueue_style(
+			'ktpp-bbpress-enhance',
+			KTPP_BBPRESS_ENHANCE_URL . '/assets/styles/ktpp-bbpress-enhance.css',
+			[ \Framework\Helper::get_main_style_handle() ],
+			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/styles/ktpp-bbpress-enhance.css' )
+		);
+	}
 
 }
