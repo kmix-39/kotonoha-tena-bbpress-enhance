@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kotonoha Tena bbPress Enhance\n"
-"POT-Creation-Date: 2021-01-28 14:04+0900\n"
-"PO-Revision-Date: 2021-01-28 14:04+0900\n"
+"POT-Creation-Date: 2021-01-28 14:10+0900\n"
+"PO-Revision-Date: 2021-01-28 14:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -168,26 +168,14 @@ msgid "This section summarizes the enhancements related to search results."
 msgstr "このセクションでは、検索結果に関連する機能強化についてまとめています。"
 
 #: App/Admin/Options.php:220
-msgid "Allow searches with no input"
-msgstr "検索キーワード未入力時のフォーム内検索を許可"
-
-#: App/Admin/Options.php:224
-msgid "Allow searches with no input."
-msgstr "検索キーワード未入力時のフォーム内検索を許可します。"
-
-#: App/Admin/Options.php:225
-msgid "This feature will be enabled if \"Use advance search\" is allowed."
-msgstr "この機能は「高度な検索の使用」が許可されている場合のみ有効化されます。"
-
-#: App/Admin/Options.php:234
 msgid "Display no keyword alert"
 msgstr "検索キーワードのアラート表示"
 
-#: App/Admin/Options.php:238
+#: App/Admin/Options.php:224
 msgid "Display an alert \"Please enter a search keyword.\""
 msgstr "「検索キーワードを入力してください」のアラートを表示させます。"
 
-#: App/Admin/Options.php:239
+#: App/Admin/Options.php:225
 msgid ""
 "This feature will not be enabled if \"Allow searches with no input\" is "
 "allowed."
@@ -195,17 +183,17 @@ msgstr ""
 "この機能は「検索キーワード未入力時のフォーム内検索を許可」が有効化されている"
 "場合には機能しません。"
 
-#: App/Admin/Options.php:252
+#: App/Admin/Options.php:238
 msgid "Overview"
 msgstr "概要"
 
-#: App/Admin/Options.php:253
+#: App/Admin/Options.php:239
 msgid ""
 "This screen provides access to all of the Kotonoha Tena bbPress Enhance "
 "settings."
 msgstr "この画面は、Kotonoha Tena bbPress Enhance のすべての設定を行えます。"
 
-#: App/Admin/Options.php:259
+#: App/Admin/Options.php:245
 msgid "For more information:"
 msgstr "詳細情報:"
 
@@ -332,6 +320,16 @@ msgstr "言乃葉テナ プロジェクト"
 #. Author URI of the plugin/theme
 msgid "https://github.com/kmix-39"
 msgstr "https://github.com/kmix-39"
+
+#~ msgid "Allow searches with no input"
+#~ msgstr "検索キーワード未入力時のフォーム内検索を許可"
+
+#~ msgid "Allow searches with no input."
+#~ msgstr "検索キーワード未入力時のフォーム内検索を許可します。"
+
+#~ msgid "This feature will be enabled if \"Use advance search\" is allowed."
+#~ msgstr ""
+#~ "この機能は「高度な検索の使用」が許可されている場合のみ有効化されます。"
 
 #~ msgid "Status"
 #~ msgstr "状態"

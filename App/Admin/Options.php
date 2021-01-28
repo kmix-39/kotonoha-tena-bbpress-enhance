@@ -216,20 +216,6 @@ class Options {
 		);
 
 		add_settings_field(
-			'use-no-keyword',
-			__( 'Allow searches with no input', 'ktpp-bbpress-enhance' ),
-			function() {
-?>
-	<input name="ktpp-bbpress-enhance[use-no-keyword]" id="_use-no-keyword" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'use-no-keyword', false ) ); ?>>
-	<label for="_use-no-keyword"><?php esc_html_e( 'Allow searches with no input.', 'ktpp-bbpress-enhance' ); ?></label>
-	<p class="description"><?php esc_html_e( 'This feature will be enabled if "Use advance search" is allowed.', 'ktpp-bbpress-enhance' ); ?></p>
-<?php
-			},
-			'ktpp-bbpress-enhance',
-			'ktpp-bbpress-enhance-search-results'
-		);
-
-		add_settings_field(
 			'display-alert-no-keyword',
 			__( 'Display no keyword alert', 'ktpp-bbpress-enhance' ),
 			function() {
