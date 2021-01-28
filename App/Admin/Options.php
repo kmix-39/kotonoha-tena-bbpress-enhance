@@ -40,8 +40,6 @@ class Options {
 			'ktpp-bbpress-enhance',
 			function( $_option ) {
 				$_default_option = [
-					'display-alert-no-keyword' => false,
-					'always-display-search-form' => false,
 					'display-form-description' => false,
 					'ajax-login' => false,
 					'no-display-main-form' => false,
@@ -49,6 +47,8 @@ class Options {
 					'linkage-wc-regist' => false,
 					'linkage-wc-lostpass' => false,
 					'is-use-advance-search' => false,
+					'display-alert-no-keyword' => false,
+					'always-display-search-form' => false,
 				];
 				$_new_option = [];
 				foreach ( $_default_option as $_key => $_value ) {
@@ -56,29 +56,6 @@ class Options {
 				}
 				return $_new_option;
 			}
-		);
-
-		// Search Results
-		add_settings_section(
-			'ktpp-bbpress-enhance-search-results',
-			__( 'Search Results', 'ktpp-bbpress-enhance' ),
-			function() {
-				echo '<p>' . esc_html__( 'This section summarizes the enhancements related to search results.', 'ktpp-bbpress-enhance' ) . '</p>';
-			},
-			'ktpp-bbpress-enhance'
-		);
-
-		add_settings_field(
-			'display-alert-no-keyword',
-			__( 'Display no keyword alert', 'ktpp-bbpress-enhance' ),
-			function() {
-?>
-	<input name="ktpp-bbpress-enhance[display-alert-no-keyword]" id="_display-alert-no-keyword" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'display-alert-no-keyword', false ) ); ?>>
-	<label for="_display-alert-no-keyword"><?php esc_html_e( 'Display an alert "Please enter a search keyword."', 'ktpp-bbpress-enhance' ); ?></label>
-<?php
-			},
-			'ktpp-bbpress-enhance',
-			'ktpp-bbpress-enhance-search-results'
 		);
 
 		add_settings_field(
@@ -226,6 +203,44 @@ class Options {
 			},
 			'ktpp-bbpress-enhance',
 			'ktpp-bbpress-enhance-advance-search'
+		);
+
+		// Search Results
+		add_settings_section(
+			'ktpp-bbpress-enhance-search-results',
+			__( 'Search Results', 'ktpp-bbpress-enhance' ),
+			function() {
+				echo '<p>' . esc_html__( 'This section summarizes the enhancements related to search results.', 'ktpp-bbpress-enhance' ) . '</p>';
+			},
+			'ktpp-bbpress-enhance'
+		);
+
+		add_settings_field(
+			'use-no-keyword',
+			__( 'Allow searches with no input', 'ktpp-bbpress-enhance' ),
+			function() {
+?>
+	<input name="ktpp-bbpress-enhance[use-no-keyword]" id="_use-no-keyword" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'use-no-keyword', false ) ); ?>>
+	<label for="_use-no-keyword"><?php esc_html_e( 'Allow searches with no input.', 'ktpp-bbpress-enhance' ); ?></label>
+	<p class="description"><?php esc_html_e( 'This feature will be enabled if "Use advance search" is allowed.', 'ktpp-bbpress-enhance' ); ?></p>
+<?php
+			},
+			'ktpp-bbpress-enhance',
+			'ktpp-bbpress-enhance-search-results'
+		);
+
+		add_settings_field(
+			'display-alert-no-keyword',
+			__( 'Display no keyword alert', 'ktpp-bbpress-enhance' ),
+			function() {
+?>
+	<input name="ktpp-bbpress-enhance[display-alert-no-keyword]" id="_display-alert-no-keyword" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'display-alert-no-keyword', false ) ); ?>>
+	<label for="_display-alert-no-keyword"><?php esc_html_e( 'Display an alert "Please enter a search keyword."', 'ktpp-bbpress-enhance' ); ?></label>
+	<p class="description"><?php esc_html_e( 'This feature will not be enabled if "Allow searches with no input" is allowed.', 'ktpp-bbpress-enhance' ); ?></p>
+<?php
+			},
+			'ktpp-bbpress-enhance',
+			'ktpp-bbpress-enhance-search-results'
 		);
 
 	}

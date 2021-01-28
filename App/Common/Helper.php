@@ -42,16 +42,20 @@ class Helper {
 		return get_posts( $_args );
 	}
 
-	static function enqueue_scripts_ktpp_bbpress_enhance() {
+	static function enqueue_scripts_ktpp_bbpress_enhance( $_slug ) {
+		$_path_name = '/assets/scripts/ktpp-bbpe-' . $_slug . '.js';
+		if ( ! is_file( KTPP_BBPRESS_ENHANCE_PATH . $_path_name ) ) {
+			return;
+		}
 		wp_enqueue_script(
-			'ktpp-bbpress-enhance',
-			KTPP_BBPRESS_ENHANCE_URL . '/assets/scripts/ktpp-bbpress-enhance.js',
+			'ktpp-bbpe-' . $_slug,
+			KTPP_BBPRESS_ENHANCE_URL . $_path_name,
 			[ 'snow-monkey-bbpress-support' ],
-			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/scripts/ktpp-bbpress-enhance.js' ),
+			filemtime( KTPP_BBPRESS_ENHANCE_PATH . $_path_name ),
 			true
 		);
 		wp_localize_script(
-			'ktpp-bbpress-enhance',
+			'ktpp-bbpe-' . $_slug,
 			'KTPP_BBPRESS_ENHANCE',
 			[
 				'endpoint' => admin_url( 'admin-ajax.php' ),
@@ -60,12 +64,16 @@ class Helper {
 		);
 	}
 
-	static function enqueue_styles_ktpp_bbpress_enhance() {
+	static function enqueue_styles_ktpp_bbpress_enhance( $_slug ) {
+		$_path_name = '/assets/styles/ktpp-bbpe-' . $_slug . '.css';
+		if ( ! is_file( KTPP_BBPRESS_ENHANCE_PATH . $_path_name ) ) {
+			return;
+		}
 		wp_enqueue_style(
 			'ktpp-bbpress-enhance',
-			KTPP_BBPRESS_ENHANCE_URL . '/assets/styles/ktpp-bbpress-enhance.css',
+			KTPP_BBPRESS_ENHANCE_URL . $_path_name,
 			[ \Framework\Helper::get_main_style_handle() ],
-			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/styles/ktpp-bbpress-enhance.css' )
+			filemtime( KTPP_BBPRESS_ENHANCE_PATH . $_path_name )
 		);
 	}
 

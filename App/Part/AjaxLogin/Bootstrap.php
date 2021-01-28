@@ -40,7 +40,8 @@ class Bootstrap {
 	}
 
 	static function _enqueue_scripts_ktpp_bbpress_enhance() {
-		Helper::enqueue_scripts_ktpp_bbpress_enhance();
+		if ( !is_bbpress() ) return;
+		Helper::enqueue_scripts_ktpp_bbpress_enhance( 'login' );
 	}
 
 	static function _add_template_stack( $_stack ) {

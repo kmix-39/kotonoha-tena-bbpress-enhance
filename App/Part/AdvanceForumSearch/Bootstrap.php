@@ -7,13 +7,16 @@ class Bootstrap {
 
 	function __construct() {
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, '_enqueue_scripts_ktpp_bbpress_enhance' ] );
-		add_filter( 'bbp_before_has_search_results_parse_args' , [ __CLASS__, '_bbp_before_has_search_results_parse_args' ] );
+		add_filter( 'bbp_before_has_search_results_parse_args', [ __CLASS__, '_bbp_before_has_search_results_parse_args' ] );
 		add_filter( 'bbp_get_template_part', [ __CLASS__, '_bbp_form_search_template' ], 10, 3 );
 	}
 
 	static function _enqueue_scripts_ktpp_bbpress_enhance() {
-		Helper::enqueue_scripts_ktpp_bbpress_enhance();
-		Helper::enqueue_styles_ktpp_bbpress_enhance();
+		if ( ! is_bbpress() ) return;
+		if ( bbp_is_forum_archive() || bbp_is_search() ) {
+			Helper::enqueue_scripts_ktpp_bbpress_enhance( 'search' );
+			Helper::enqueue_styles_ktpp_bbpress_enhance( 'search' );
+		}
 	}
 
 	static function _bbp_before_has_search_results_parse_args( $r ) {
@@ -52,7 +55,6 @@ class Bootstrap {
 				);
 			}
 		}
-
 		return $r;
 	}
 
@@ -66,12 +68,6 @@ class Bootstrap {
 
 	static function _add_template_stack( $_stack ) {
 		return array_merge( $_stack, [ KTPP_BBPRESS_ENHANCE_PATH . '/App/View/bbPress' ] );
-	}
-
-	static function _bbp_template_before_search() {
-		if ( bbp_has_search_results() ) {
-			
-		}
 	}
 
 }

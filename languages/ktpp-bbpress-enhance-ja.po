@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kotonoha Tena bbPress Enhance\n"
-"POT-Creation-Date: 2020-12-28 16:47+0900\n"
-"PO-Revision-Date: 2020-12-28 16:48+0900\n"
+"POT-Creation-Date: 2021-01-28 14:04+0900\n"
+"PO-Revision-Date: 2021-01-28 14:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -31,119 +31,103 @@ msgstr "Kotonoha Tena bbPress Enhance"
 msgid "Kotonoha Tena bbPress Enhance Settings"
 msgstr "Kotonoha Tena bbPress の設定"
 
-#: App/Admin/Options.php:64
-msgid "Search Results"
-msgstr "検索結果"
-
-#: App/Admin/Options.php:66
-msgid "This section summarizes the enhancements related to search results."
-msgstr "このセクションでは、検索結果に関連する機能強化についてまとめています。"
-
-#: App/Admin/Options.php:73
-msgid "Display no keyword alert"
-msgstr "検索キーワードのアラート表示"
-
-#: App/Admin/Options.php:77
-msgid "Display an alert \"Please enter a search keyword.\""
-msgstr "「検索キーワードを入力してください」のアラートを表示させます。"
-
-#: App/Admin/Options.php:86
+#: App/Admin/Options.php:63
 msgid "Always display the search form"
 msgstr "常に検索フォームを表示"
 
-#: App/Admin/Options.php:90
+#: App/Admin/Options.php:67
 msgid "Displays the search form even if the search result does not exist."
 msgstr "検索結果が存在しない場合のページに、検索フォームを表示させます。"
 
-#: App/Admin/Options.php:100 App/View/bbPress/form-search-advance.php:32
+#: App/Admin/Options.php:77 App/View/bbPress/form-search-advance.php:32
 msgid "Forum"
 msgstr "フォーラム"
 
-#: App/Admin/Options.php:102
+#: App/Admin/Options.php:79
 msgid "This section summarizes the enhancements to the forum."
 msgstr "このセクションでは、フォーラムの機能強化についてまとめています。"
 
-#: App/Admin/Options.php:108
+#: App/Admin/Options.php:85
 msgid "Display the forum description"
 msgstr "フォーラムの説明を表示"
 
-#: App/Admin/Options.php:112
+#: App/Admin/Options.php:89
 msgid "Display a description at the after of the forum title."
 msgstr "フォーラムのタイトルの後に説明を表示させます。"
 
-#: App/Admin/Options.php:122
+#: App/Admin/Options.php:99
 msgid "Login / Logout"
 msgstr "ログイン / ログアウト"
 
-#: App/Admin/Options.php:124
+#: App/Admin/Options.php:101
 msgid "This section summarizes the enhancements to the login / logout form."
 msgstr ""
 "このセクションでは、ログイン / ログアウトフォームの機能強化についてまとめてい"
 "ます。"
 
-#: App/Admin/Options.php:130
+#: App/Admin/Options.php:107
 msgid "Ajax Form"
 msgstr "Ajax フォーム"
 
-#: App/Admin/Options.php:134
+#: App/Admin/Options.php:111
 msgid "Use Ajax to make a login / logout form that does not transition."
 msgstr ""
 "Ajax を使用した、遷移しない ログイン / ログアウトのフォームを生成します。"
 
-#: App/Admin/Options.php:143
+#: App/Admin/Options.php:120
 msgid "Not display the main form"
 msgstr "メインのフォームを表示しない"
 
-#: App/Admin/Options.php:147
+#: App/Admin/Options.php:124
 msgid ""
 "If a login form is set in the widget, the main form will not be displayed."
 msgstr ""
 "ログインフォームがウィジェットに設定されている場合、メインのログインフォーム"
 "を表示させません。"
 
-#: App/Admin/Options.php:148 App/Admin/Options.php:162
+#: App/Admin/Options.php:125 App/Admin/Options.php:139
 msgid "To use this feature, you need to have Ajax Form enabled."
 msgstr "この機能を使用するには、Ajax フォームを有効にする必要があります。"
 
-#: App/Admin/Options.php:157
+#: App/Admin/Options.php:134
 msgid "Display elements in a form"
 msgstr "フォームに要素を表示する"
 
-#: App/Admin/Options.php:161
+#: App/Admin/Options.php:138
 msgid "Display role and number of stars in the widget after login."
 msgstr "ログイン後のウィジェット内に、役割と星の数を表示します。"
 
-#: App/Admin/Options.php:172
+#: App/Admin/Options.php:149
 msgid "Linkage with WooCommerce"
 msgstr "WooCommerceとの連携"
 
-#: App/Admin/Options.php:174
+#: App/Admin/Options.php:151
 msgid ""
 "This section summarizes the enhancements to the linkage with WooCommerce."
 msgstr "このセクションでは、WooCommerce と連携した強化についてまとめています。"
 
-#: App/Admin/Options.php:181
+#: App/Admin/Options.php:158
 msgid "Change \"Regist\" link"
 msgstr "「登録」のリンクを変更"
 
-#: App/Admin/Options.php:185
+#: App/Admin/Options.php:162
 msgid ""
 "Change the \"Regist\" link in the login form to the WooCommerce \"Regist\" "
 "page."
 msgstr ""
 "ログインフォームの「登録」リンクを、WooCommerce 「登録」ページに変更します。"
 
-#: App/Admin/Options.php:186 App/Admin/Options.php:200
+#: App/Admin/Options.php:163 App/Admin/Options.php:177
 msgid "To use this feature, you need to WooCommerce plugin active."
 msgstr ""
 "この機能を使用するには、WooCommerce プラグインをアクティブにする必要がありま"
 "す。"
 
-#: App/Admin/Options.php:195
+#: App/Admin/Options.php:172
 msgid "Change \"Forgot Password\" link"
 msgstr "「パスワードを忘れた場合」のリンクを変更"
 
-#: App/Admin/Options.php:199
+#: App/Admin/Options.php:176
 msgid ""
 "Change the \"Forgot Password\" link in the login form to the WooCommerce "
 "\"Forgot Password\" page."
@@ -151,23 +135,23 @@ msgstr ""
 "ログインフォームの「パスワードを忘れた場合」のリンクを WooCommerce の「パス"
 "ワードを忘れた場合」ページへ変更します。"
 
-#: App/Admin/Options.php:210
+#: App/Admin/Options.php:187
 msgid "Advance search"
 msgstr "高度な検索"
 
-#: App/Admin/Options.php:212
+#: App/Admin/Options.php:189
 msgid "This section summarizes the enhancements to the search."
 msgstr "このセクションでは、フォーラム内検索の機能強化についてまとめています。"
 
-#: App/Admin/Options.php:219
+#: App/Admin/Options.php:196
 msgid "Use advance search"
 msgstr "高度な検索の使用"
 
-#: App/Admin/Options.php:223
+#: App/Admin/Options.php:200
 msgid "Add search criteria to main search form within the forum."
 msgstr "フォーラム内のメイン検索フォームに検索条件を追加します。"
 
-#: App/Admin/Options.php:224
+#: App/Admin/Options.php:201
 msgid ""
 "If you have a plugin running that changes the search criteria for other "
 "forums, it may cause a conflict."
@@ -175,21 +159,57 @@ msgstr ""
 "他のフォーラムの検索条件を変更するプラグインが有効化されている場合は、競合が"
 "発生する可能性があります。"
 
-#: App/Admin/Options.php:237
+#: App/Admin/Options.php:211
+msgid "Search Results"
+msgstr "検索結果"
+
+#: App/Admin/Options.php:213
+msgid "This section summarizes the enhancements related to search results."
+msgstr "このセクションでは、検索結果に関連する機能強化についてまとめています。"
+
+#: App/Admin/Options.php:220
+msgid "Allow searches with no input"
+msgstr "検索キーワード未入力時のフォーム内検索を許可"
+
+#: App/Admin/Options.php:224
+msgid "Allow searches with no input."
+msgstr "検索キーワード未入力時のフォーム内検索を許可します。"
+
+#: App/Admin/Options.php:225
+msgid "This feature will be enabled if \"Use advance search\" is allowed."
+msgstr "この機能は「高度な検索の使用」が許可されている場合のみ有効化されます。"
+
+#: App/Admin/Options.php:234
+msgid "Display no keyword alert"
+msgstr "検索キーワードのアラート表示"
+
+#: App/Admin/Options.php:238
+msgid "Display an alert \"Please enter a search keyword.\""
+msgstr "「検索キーワードを入力してください」のアラートを表示させます。"
+
+#: App/Admin/Options.php:239
+msgid ""
+"This feature will not be enabled if \"Allow searches with no input\" is "
+"allowed."
+msgstr ""
+"この機能は「検索キーワード未入力時のフォーム内検索を許可」が有効化されている"
+"場合には機能しません。"
+
+#: App/Admin/Options.php:252
 msgid "Overview"
 msgstr "概要"
 
-#: App/Admin/Options.php:238
+#: App/Admin/Options.php:253
 msgid ""
 "This screen provides access to all of the Kotonoha Tena bbPress Enhance "
 "settings."
 msgstr "この画面は、Kotonoha Tena bbPress Enhance のすべての設定を行えます。"
 
-#: App/Admin/Options.php:244
+#: App/Admin/Options.php:259
 msgid "For more information:"
 msgstr "詳細情報:"
 
-#: App/Part/AjaxLogin/Bootstrap.php:102
+#: App/Part/AjaxLogin/Bootstrap.php:90
 msgid ""
 "<strong>ERROR</strong>: Cookies are blocked due to unexpected output. Please "
 "check your cookie settings and try again."
@@ -281,7 +301,7 @@ msgstr "登録"
 msgid "Lost Password"
 msgstr "パスワードを忘れた場合"
 
-#: kotonoha-tena-bbpress-enhance.php:38
+#: kotonoha-tena-bbpress-enhance.php:40
 msgid ""
 "[Kotonoha Tena bbPress Enhance] To available, Need to enable the \"Snow "
 "Monkey\" theme."
@@ -289,7 +309,7 @@ msgstr ""
 "【Kotonoha Tena bbPress Enhance】利用可能にするには、「Snow Monkey」テーマを"
 "有効にする必要があります。"
 
-#: kotonoha-tena-bbpress-enhance.php:45
+#: kotonoha-tena-bbpress-enhance.php:47
 msgid ""
 "[Kotonoha Tena bbPress Enhance] To available, Need to enable the \"Snow "
 "Monkey bbPress support\" plugin."
@@ -298,9 +318,8 @@ msgstr ""
 "support」プラグインを有効にする必要があります。"
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://github.com/kmix-39"
-msgstr "https://github.com/kmix-39"
+msgid "https://reverse-gorilla.netlify.app"
+msgstr "https://reverse-gorilla.netlify.app"
 
 #. Description of the plugin/theme
 msgid "Enhance the functionality of bbPress"
@@ -309,6 +328,10 @@ msgstr "このプラグインは bbPress の機能を強化します"
 #. Author of the plugin/theme
 msgid "Kotonoha Tena Project"
 msgstr "言乃葉テナ プロジェクト"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/kmix-39"
+msgstr "https://github.com/kmix-39"
 
 #~ msgid "Status"
 #~ msgstr "状態"
