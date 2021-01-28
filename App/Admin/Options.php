@@ -47,8 +47,9 @@ class Options {
 					'linkage-wc-regist' => false,
 					'linkage-wc-lostpass' => false,
 					'is-use-advance-search' => false,
-					'display-alert-no-keyword' => false,
 					'always-display-search-form' => false,
+					'result-display-search-form' => false,
+					'display-alert-no-keyword' => false,
 				];
 				$_new_option = [];
 				foreach ( $_default_option as $_key => $_value ) {
@@ -56,19 +57,6 @@ class Options {
 				}
 				return $_new_option;
 			}
-		);
-
-		add_settings_field(
-			'always-display-search-form',
-			__( 'Always display the search form', 'ktpp-bbpress-enhance' ),
-			function() {
-?>
-	<input name="ktpp-bbpress-enhance[always-display-search-form]" id="_always-display-search-form" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'always-display-search-form', false ) ); ?>>
-	<label for="_always-display-search-form"><?php esc_html_e( 'Displays the search form even if the search result does not exist.', 'ktpp-bbpress-enhance' ); ?></label>
-<?php
-			},
-			'ktpp-bbpress-enhance',
-			'ktpp-bbpress-enhance-search-results'
 		);
 
 		// Forum
@@ -109,6 +97,7 @@ class Options {
 ?>
 	<input name="ktpp-bbpress-enhance[ajax-login]" id="_ajax-login" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'ajax-login', false ) ); ?>>
 	<label for="_ajax-login"><?php esc_html_e( 'Use Ajax to make a login / logout form that does not transition.', 'ktpp-bbpress-enhance' ); ?></label>
+	<p class="description"><?php esc_html_e( 'Use Ajax.', 'ktpp-bbpress-enhance' ); ?></p>
 <?php
 			},
 			'ktpp-bbpress-enhance',
@@ -216,6 +205,25 @@ class Options {
 		);
 
 		add_settings_field(
+			'expand-the-search-form-display',
+			__( 'Expand the search form display', 'ktpp-bbpress-enhance' ),
+			function() {
+?>
+	<p>
+		<input name="ktpp-bbpress-enhance[always-display-search-form]" id="_always-display-search-form" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'always-display-search-form', false ) ); ?>>
+		<label for="_always-display-search-form"><?php esc_html_e( 'Displays the search form even if the search result does not exist.', 'ktpp-bbpress-enhance' ); ?></label>
+	</p>
+	<p>
+		<input name="ktpp-bbpress-enhance[result-display-search-form]" id="_result-display-search-form" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'result-display-search-form', false ) ); ?>>
+		<label for="_result-display-search-form"><?php esc_html_e( 'Display a search form on the search results page.', 'ktpp-bbpress-enhance' ); ?></label>
+	</p>
+<?php
+			},
+			'ktpp-bbpress-enhance',
+			'ktpp-bbpress-enhance-search-results'
+		);
+
+		add_settings_field(
 			'display-alert-no-keyword',
 			__( 'Display no keyword alert', 'ktpp-bbpress-enhance' ),
 			function() {
@@ -228,6 +236,8 @@ class Options {
 			'ktpp-bbpress-enhance',
 			'ktpp-bbpress-enhance-search-results'
 		);
+
+		
 
 	}
 

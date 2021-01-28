@@ -15,7 +15,9 @@ class Helper {
 
 	static function get_settings_value( $_key, $_default = false ) {
 		$_option = get_option( 'ktpp-bbpress-enhance' );
-		return isset( $_option[ $_key ] ) ? $_option[ $_key ] : $_default;
+		$_result = isset( $_option[ $_key ] ) ? $_option[ $_key ] : $_default;
+		$_result = apply_filters( 'ktpp_bbpress_enhance_get_option_' . $_key, $_result );
+		return $_result;
 	}
 
 	static function add_help_tabs( $_items ) {

@@ -13,7 +13,20 @@ class Bootstrap {
 
 	static function _enqueue_scripts_ktpp_bbpress_enhance() {
 		if ( ! is_bbpress() ) return;
-		if ( bbp_is_forum_archive() || bbp_is_search() ) {
+
+		$_is_load = false;
+		// フォーラム時対応
+		$_is_load |= bbp_is_forum_archive();
+		// 検索キーワードを入力されていない場合、検索が見つからない場合
+		$_is_load |= ( bbp_is_search() && ! bbp_has_search_results() && ! bbp_get_search_terms() );
+		// 検索結果がない場合でもフォームを出す場合
+		Helper::get_settings_value( 'always-display-search-form', false ) &&
+			$_is_load |= ( bbp_is_search() && ! bbp_has_search_results() );
+		// 検索結果一覧でフォームが有効な場合
+		Helper::get_settings_value( 'result-display-search-form', false ) &&
+			$_is_load |= ( bbp_is_search() );
+		
+		if ( $_is_load ) {
 			Helper::enqueue_scripts_ktpp_bbpress_enhance( 'search' );
 			Helper::enqueue_styles_ktpp_bbpress_enhance( 'search' );
 		}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kotonoha Tena bbPress Enhance\n"
-"POT-Creation-Date: 2021-01-28 14:10+0900\n"
-"PO-Revision-Date: 2021-01-28 14:10+0900\n"
+"POT-Creation-Date: 2021-01-28 16:34+0900\n"
+"PO-Revision-Date: 2021-01-28 16:35+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -31,103 +31,102 @@ msgstr "Kotonoha Tena bbPress Enhance"
 msgid "Kotonoha Tena bbPress Enhance Settings"
 msgstr "Kotonoha Tena bbPress の設定"
 
-#: App/Admin/Options.php:63
-msgid "Always display the search form"
-msgstr "常に検索フォームを表示"
-
-#: App/Admin/Options.php:67
-msgid "Displays the search form even if the search result does not exist."
-msgstr "検索結果が存在しない場合のページに、検索フォームを表示させます。"
-
-#: App/Admin/Options.php:77 App/View/bbPress/form-search-advance.php:32
+#: App/Admin/Options.php:65 App/View/bbPress/form-search-advance.php:32
 msgid "Forum"
 msgstr "フォーラム"
 
-#: App/Admin/Options.php:79
+#: App/Admin/Options.php:67
 msgid "This section summarizes the enhancements to the forum."
 msgstr "このセクションでは、フォーラムの機能強化についてまとめています。"
 
-#: App/Admin/Options.php:85
+#: App/Admin/Options.php:73
 msgid "Display the forum description"
 msgstr "フォーラムの説明を表示"
 
-#: App/Admin/Options.php:89
+#: App/Admin/Options.php:77
 msgid "Display a description at the after of the forum title."
 msgstr "フォーラムのタイトルの後に説明を表示させます。"
 
-#: App/Admin/Options.php:99
+#: App/Admin/Options.php:87
 msgid "Login / Logout"
 msgstr "ログイン / ログアウト"
 
-#: App/Admin/Options.php:101
+#: App/Admin/Options.php:89
 msgid "This section summarizes the enhancements to the login / logout form."
 msgstr ""
 "このセクションでは、ログイン / ログアウトフォームの機能強化についてまとめてい"
 "ます。"
 
-#: App/Admin/Options.php:107
+#: App/Admin/Options.php:95
 msgid "Ajax Form"
-msgstr "Ajax フォーム"
+msgstr "ログイン・ログアウトの遷移を無効化"
 
-#: App/Admin/Options.php:111
+#: App/Admin/Options.php:99
 msgid "Use Ajax to make a login / logout form that does not transition."
 msgstr ""
-"Ajax を使用した、遷移しない ログイン / ログアウトのフォームを生成します。"
+"フォーラムのログイン / ログアウトのエラー時に WordPress のログイン画面へ遷移"
+"しません。"
 
-#: App/Admin/Options.php:120
+#: App/Admin/Options.php:100
+msgid "Use Ajax."
+msgstr "Ajax を使用します。"
+
+#: App/Admin/Options.php:109
 msgid "Not display the main form"
 msgstr "メインのフォームを表示しない"
 
-#: App/Admin/Options.php:124
+#: App/Admin/Options.php:113
 msgid ""
 "If a login form is set in the widget, the main form will not be displayed."
 msgstr ""
 "ログインフォームがウィジェットに設定されている場合、メインのログインフォーム"
 "を表示させません。"
 
-#: App/Admin/Options.php:125 App/Admin/Options.php:139
+#: App/Admin/Options.php:114 App/Admin/Options.php:128
 msgid "To use this feature, you need to have Ajax Form enabled."
-msgstr "この機能を使用するには、Ajax フォームを有効にする必要があります。"
+msgstr ""
+"この機能を使用するには、「ログイン・ログアウトの遷移を無効化」機能が有効化さ"
+"れている必要があります。"
 
-#: App/Admin/Options.php:134
+#: App/Admin/Options.php:123
 msgid "Display elements in a form"
 msgstr "フォームに要素を表示する"
 
-#: App/Admin/Options.php:138
+#: App/Admin/Options.php:127
 msgid "Display role and number of stars in the widget after login."
 msgstr "ログイン後のウィジェット内に、役割と星の数を表示します。"
 
-#: App/Admin/Options.php:149
+#: App/Admin/Options.php:138
 msgid "Linkage with WooCommerce"
 msgstr "WooCommerceとの連携"
 
-#: App/Admin/Options.php:151
+#: App/Admin/Options.php:140
 msgid ""
 "This section summarizes the enhancements to the linkage with WooCommerce."
 msgstr "このセクションでは、WooCommerce と連携した強化についてまとめています。"
 
-#: App/Admin/Options.php:158
+#: App/Admin/Options.php:147
 msgid "Change \"Regist\" link"
 msgstr "「登録」のリンクを変更"
 
-#: App/Admin/Options.php:162
+#: App/Admin/Options.php:151
 msgid ""
 "Change the \"Regist\" link in the login form to the WooCommerce \"Regist\" "
 "page."
 msgstr ""
 "ログインフォームの「登録」リンクを、WooCommerce 「登録」ページに変更します。"
 
-#: App/Admin/Options.php:163 App/Admin/Options.php:177
+#: App/Admin/Options.php:152 App/Admin/Options.php:166
 msgid "To use this feature, you need to WooCommerce plugin active."
 msgstr ""
 "この機能を使用するには、WooCommerce プラグインをアクティブにする必要がありま"
 "す。"
 
-#: App/Admin/Options.php:172
+#: App/Admin/Options.php:161
 msgid "Change \"Forgot Password\" link"
 msgstr "「パスワードを忘れた場合」のリンクを変更"
 
-#: App/Admin/Options.php:176
+#: App/Admin/Options.php:165
 msgid ""
 "Change the \"Forgot Password\" link in the login form to the WooCommerce "
 "\"Forgot Password\" page."
@@ -135,23 +134,23 @@ msgstr ""
 "ログインフォームの「パスワードを忘れた場合」のリンクを WooCommerce の「パス"
 "ワードを忘れた場合」ページへ変更します。"
 
-#: App/Admin/Options.php:187
+#: App/Admin/Options.php:176
 msgid "Advance search"
 msgstr "高度な検索"
 
-#: App/Admin/Options.php:189
+#: App/Admin/Options.php:178
 msgid "This section summarizes the enhancements to the search."
 msgstr "このセクションでは、フォーラム内検索の機能強化についてまとめています。"
 
-#: App/Admin/Options.php:196
+#: App/Admin/Options.php:185
 msgid "Use advance search"
 msgstr "高度な検索の使用"
 
-#: App/Admin/Options.php:200
+#: App/Admin/Options.php:189
 msgid "Add search criteria to main search form within the forum."
 msgstr "フォーラム内のメイン検索フォームに検索条件を追加します。"
 
-#: App/Admin/Options.php:201
+#: App/Admin/Options.php:190
 msgid ""
 "If you have a plugin running that changes the search criteria for other "
 "forums, it may cause a conflict."
@@ -159,23 +158,35 @@ msgstr ""
 "他のフォーラムの検索条件を変更するプラグインが有効化されている場合は、競合が"
 "発生する可能性があります。"
 
-#: App/Admin/Options.php:211
+#: App/Admin/Options.php:200
 msgid "Search Results"
 msgstr "検索結果"
 
-#: App/Admin/Options.php:213
+#: App/Admin/Options.php:202
 msgid "This section summarizes the enhancements related to search results."
 msgstr "このセクションでは、検索結果に関連する機能強化についてまとめています。"
 
-#: App/Admin/Options.php:220
+#: App/Admin/Options.php:209
+msgid "Expand the search form display"
+msgstr "検索フォームの表示を拡張"
+
+#: App/Admin/Options.php:214
+msgid "Displays the search form even if the search result does not exist."
+msgstr "検索結果が存在しない場合のページに、検索フォームを表示させます。"
+
+#: App/Admin/Options.php:218
+msgid "Display a search form on the search results page."
+msgstr "検索結果の一覧ページに検索フォームを表示します。"
+
+#: App/Admin/Options.php:228
 msgid "Display no keyword alert"
 msgstr "検索キーワードのアラート表示"
 
-#: App/Admin/Options.php:224
+#: App/Admin/Options.php:232
 msgid "Display an alert \"Please enter a search keyword.\""
 msgstr "「検索キーワードを入力してください」のアラートを表示させます。"
 
-#: App/Admin/Options.php:225
+#: App/Admin/Options.php:233
 msgid ""
 "This feature will not be enabled if \"Allow searches with no input\" is "
 "allowed."
@@ -183,17 +194,17 @@ msgstr ""
 "この機能は「検索キーワード未入力時のフォーム内検索を許可」が有効化されている"
 "場合には機能しません。"
 
-#: App/Admin/Options.php:238
+#: App/Admin/Options.php:248
 msgid "Overview"
 msgstr "概要"
 
-#: App/Admin/Options.php:239
+#: App/Admin/Options.php:249
 msgid ""
 "This screen provides access to all of the Kotonoha Tena bbPress Enhance "
 "settings."
 msgstr "この画面は、Kotonoha Tena bbPress Enhance のすべての設定を行えます。"
 
-#: App/Admin/Options.php:245
+#: App/Admin/Options.php:255
 msgid "For more information:"
 msgstr "詳細情報:"
 

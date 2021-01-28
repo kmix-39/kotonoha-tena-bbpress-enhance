@@ -21,6 +21,14 @@ class Bootstrap {
 				10,
 				0
 			);
+
+		Helper::get_settings_value( 'result-display-search-form', false ) &&
+			add_filter(
+				'snow_monkey_pre_template_part_render_template-parts/content/entry/content/content',
+				[ __CLASS__, '_render_bbp_search_form_before_results' ],
+				10,
+				3
+			);
 	}
 
 	static function _bbp_template_before_search() {
@@ -36,9 +44,16 @@ class Bootstrap {
 	}
 
 	static function _bbp_template_after_search_results() {
-		if ( bbp_get_search_terms() ) {
+		if ( bbp_get_search_terms() && ! bbp_has_search_results() ) {
 			bbp_get_template_part( 'form', 'search' );
 		}
+	}
+
+	static function _render_bbp_search_form_before_results( $html, $name, $vars ) {
+		if ( bbp_get_search_terms() && bbp_has_search_results() ) {
+			bbp_get_template_part( 'form', 'search' );
+		}
+		return $html;
 	}
 
 }
