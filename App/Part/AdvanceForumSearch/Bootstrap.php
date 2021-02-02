@@ -16,7 +16,7 @@ class Bootstrap {
 
 		$_is_load = false;
 		// フォーラム時対応
-		$_is_load |= bbp_is_forum_archive();
+		$_is_load |= bbp_is_forum_archive() || bbp_is_topic_archive();
 		// 検索キーワードを入力されていない場合、検索が見つからない場合
 		$_is_load |= ( bbp_is_search() && ! bbp_has_search_results() && ! bbp_get_search_terms() );
 		// 検索結果がない場合でもフォームを出す場合
