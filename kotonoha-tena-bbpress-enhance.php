@@ -3,10 +3,10 @@
  * Plugin Name: Kotonoha Tena bbPress Enhance
  * Plugin URI: https://reverse-gorilla.netlify.app
  * Description: Enhance the functionality of bbPress
- * Version: 0.2.8
+ * Version: 0.3.0
  * Requires at least: 5.6
  * Requires PHP: 7.0
- * Tested up to: 5.6
+ * Tested up to: 5.6.1
  * Author: Kotonoha Tena Project
  * Author URI: https://github.com/kmix-39
  * License: GPL2 or later
@@ -23,9 +23,22 @@ define( 'KTPP_BBPRESS_ENHANCE_FILE', __FILE__ );
 class KTPP_bbPressEnhance {
 
 	function __construct() {
+		register_activation_hook( __FILE__, [ __CLASS__, '_activation' ] );
+
 		add_action( 'plugins_loaded', [ __CLASS__, '_plugins_loaded' ] );
 
 		new App\Common\Updater();
+	}
+
+	static function _activation() {
+		$is_installed = App\Database\Setup::install();
+		if ( ! $is_installed ) {
+			register_uninstall_hook( __FILE__, [ __CLASS__, '_uninstall' ] );
+		}
+	}
+
+	static function _uninstall() {
+		App\Database\Setup::uninstall();
 	}
 
 	static function _plugins_loaded() {

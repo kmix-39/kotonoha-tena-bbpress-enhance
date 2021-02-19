@@ -2,13 +2,24 @@
 namespace KTPP\bbPressEnhance\App\Admin;
 
 use KTPP\bbPressEnhance\App\Common\Helper;
+use KTPP\bbPressEnhance\App\Definition\Stamp;
 
 class Options {
 
     function __construct() {
+		add_action( 'admin_enqueue_scripts', [ __CLASS__, '_admin_enqueue_scripts'] );
         add_action( 'admin_menu', [ __CLASS__, '_admin_menu' ] );
 		add_action( 'admin_init', [ __CLASS__, '_admin_init' ] );
     }
+
+	static function _admin_enqueue_scripts() {
+		wp_enqueue_style(
+			'ktpp-bbpress-enhance-admin',
+			KTPP_BBPRESS_ENHANCE_URL . '/assets/styles/ktpp-bbpe-admin.css',
+			[],
+			filemtime( KTPP_BBPRESS_ENHANCE_PATH . '/assets/styles/ktpp-bbpe-admin.css' )
+		);
+	}
 
     static function _admin_menu() {
         $_page = add_options_page(
@@ -20,7 +31,7 @@ class Options {
 ?>
                 <div class="wrap">
                     <h1><?php esc_html_e( 'Kotonoha Tena bbPress Enhance Settings', 'ktpp-bbpress-enhance' ); ?></h1>
-                    <form method="post" action="options.php">
+					<form method="post" action="options.php">
                         <?php
                             settings_fields( 'ktpp-bbpress-enhance' );
                             do_settings_sections( 'ktpp-bbpress-enhance' );
@@ -50,7 +61,14 @@ class Options {
 					'always-display-search-form' => false,
 					'result-display-search-form' => false,
 					'display-alert-no-keyword' => false,
+					'use-stamps' => false,
 				];
+
+				$stamps = apply_filters( 'ktpp_bbpress_enhance_get_stamps', Stamp::STAMP_DATA );
+				foreach ( $stamps as $stamp ) {
+					$_default_option['available-stamp-' . esc_attr($stamp['id'])] = false;
+				}
+
 				$_new_option = [];
 				foreach ( $_default_option as $_key => $_value ) {
 					$_new_option[ $_key ] = isset( $_option[ $_key ] ) ? $_option[ $_key ] : $_value;
@@ -237,7 +255,45 @@ class Options {
 			'ktpp-bbpress-enhance-search-results'
 		);
 
-		
+		// Stamps
+		add_settings_section(
+			'ktpp-bbpress-enhance-stamps',
+			__( 'Stamp', 'ktpp-bbpress-enhance' ),
+			function() {
+				echo '<p>' . esc_html__( 'This section summarizes the enhancements related to stamps.', 'ktpp-bbpress-enhance' ) . '</p>';
+			},
+			'ktpp-bbpress-enhance'
+		);
+
+		add_settings_field(
+			'use-stamps',
+			__( 'Activate the Stamps function', 'ktpp-bbpress-enhance' ),
+			function() {
+?>
+	<input name="ktpp-bbpress-enhance[use-stamps]" id="_use-stamps" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'use-stamps', false ) ); ?>>
+	<label for="_use-stamps"><?php esc_html_e( 'Make it possible to "stamp" each topic / reply.', 'ktpp-bbpress-enhance' ); ?></label>
+<?php
+			},
+			'ktpp-bbpress-enhance',
+			'ktpp-bbpress-enhance-stamps'
+		);
+
+		$stamps = apply_filters( 'ktpp_bbpress_enhance_get_stamps', Stamp::STAMP_DATA );
+
+		foreach ( $stamps as $stamp ) {
+			add_settings_field(
+				'available-stamp-' . esc_attr($stamp['id']),
+				'<span class="ktpp-admin-fields-label"><img src="' . esc_attr( esc_url( $stamp['image'] ) ) . '"> ' . $stamp['name'] . '</span>',
+				function() use ( $stamp ) {
+?>
+	<input name="ktpp-bbpress-enhance[available-stamp-<?php echo esc_attr( $stamp['id'] ); ?>]" id="_available-stamp-<?php echo esc_attr( $stamp['id'] ); ?>" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'available-stamp-' . esc_attr( $stamp['id'] ), false ) ); ?>>
+	<label for="_available-stamp-<?php echo esc_attr( $stamp['id'] ); ?>"><?php esc_html_e( 'Use this stamp.', 'ktpp-bbpress-enhance' ); ?></label>
+<?php
+				},
+				'ktpp-bbpress-enhance',
+				'ktpp-bbpress-enhance-stamps'
+			);
+		}
 
 	}
 
