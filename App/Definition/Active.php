@@ -4,8 +4,8 @@ namespace KTPP\bbPressEnhance\App\Definition;
 class Active {
 
 	const THEME_SNOW_MONKEY = [
-		'snow-monkey' => '12.1.0',
-		'snow-monkey/resources' => '12.1.0',
+		'snow-monkey' => '14.0.2',
+		'snow-monkey/resources' => '14.0.2',
 	];
 
 	const PLUGIN_BBPRESS = [
