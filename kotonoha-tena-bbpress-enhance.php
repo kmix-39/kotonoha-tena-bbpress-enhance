@@ -3,7 +3,7 @@
  * Plugin Name: Kotonoha Tena bbPress Enhance
  * Plugin URI: https://reverse-gorilla.netlify.app
  * Description: Enhance the functionality of bbPress
- * Version: 0.3.0
+ * Version: 0.4.0
  * Requires at least: 5.7
  * Requires PHP: 7.0
  * Tested up to: 5.7
