@@ -14,17 +14,9 @@ class Bootstrap {
 				0
 			);
 
-		Helper::get_settings_value( 'always-display-search-form', false ) &&
-			add_action(
-				'bbp_template_after_search_results',
-				[ __CLASS__, '_bbp_template_after_search_results' ],
-				10,
-				0
-			);
-
 		Helper::get_settings_value( 'result-display-search-form', false ) &&
 			add_filter(
-				'snow_monkey_pre_template_part_render_template-parts/content/entry/content/content',
+				'snow_monkey_pre_template_part_render_template-parts/archive/entry/content/bbpress',
 				[ __CLASS__, '_render_bbp_search_form_before_results' ],
 				10,
 				3

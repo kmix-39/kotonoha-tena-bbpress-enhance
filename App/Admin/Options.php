@@ -47,7 +47,6 @@ class Options {
 					'linkage-wc-regist' => false,
 					'linkage-wc-lostpass' => false,
 					'is-use-advance-search' => false,
-					'always-display-search-form' => false,
 					'result-display-search-form' => false,
 					'display-alert-no-keyword' => false,
 				];
@@ -210,10 +209,6 @@ class Options {
 			function() {
 ?>
 	<p>
-		<input name="ktpp-bbpress-enhance[always-display-search-form]" id="_always-display-search-form" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'always-display-search-form', false ) ); ?>>
-		<label for="_always-display-search-form"><?php esc_html_e( 'Displays the search form even if the search result does not exist.', 'ktpp-bbpress-enhance' ); ?></label>
-	</p>
-	<p>
 		<input name="ktpp-bbpress-enhance[result-display-search-form]" id="_result-display-search-form" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'result-display-search-form', false ) ); ?>>
 		<label for="_result-display-search-form"><?php esc_html_e( 'Display a search form on the search results page.', 'ktpp-bbpress-enhance' ); ?></label>
 	</p>
@@ -230,7 +225,6 @@ class Options {
 ?>
 	<input name="ktpp-bbpress-enhance[display-alert-no-keyword]" id="_display-alert-no-keyword" type="checkbox" value="1"<?php checked( 1, Helper::get_settings_value( 'display-alert-no-keyword', false ) ); ?>>
 	<label for="_display-alert-no-keyword"><?php esc_html_e( 'Display an alert "Please enter a search keyword."', 'ktpp-bbpress-enhance' ); ?></label>
-	<p class="description"><?php esc_html_e( 'This feature will not be enabled if "Allow searches with no input" is allowed.', 'ktpp-bbpress-enhance' ); ?></p>
 <?php
 			},
 			'ktpp-bbpress-enhance',

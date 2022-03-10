@@ -11,6 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 use KTPP\bbPressEnhance\App\Common\Helper;
+
 if ( bbp_allow_search() ) :
 ?>
 	<div class="bbp-search-form">
